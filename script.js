@@ -4,7 +4,7 @@ const app = new Vue({
     el: '#app',
 
     data: {
-        titulo: 'GYM con Vue',
+        titulo: 'CRUD con Vue',
         tareas: [],
         nuevaTarea: ''
     },
@@ -19,30 +19,30 @@ const app = new Vue({
             
             this.nuevaTarea='';
             //this.save();
-            localStorage.setItem('gym-vue', JSON.stringify(this.tareas));
+            localStorage.setItem('crud-vue', JSON.stringify(this.tareas));
         },
 
         completar(index){
             this.tareas[index].estado = true;
             //save();
-            localStorage.setItem('gym-vue', JSON.stringify(this.tareas));
+            localStorage.setItem('crud-vue', JSON.stringify(this.tareas));
         },
         
         borrar(index){
             this.tareas.splice(index, 1);
             //save();
-            localStorage.setItem('gym-vue', JSON.stringify(this.tareas));
+            localStorage.setItem('crud-vue', JSON.stringify(this.tareas));
         },
 
         /*save(){
-            localStorage.setItem('gym-vue', JSON.stringify(this.tareas));
+            localStorage.setItem('crud-vue', JSON.stringify(this.tareas));
         }*/
 
     },
 
     created: function(){
 
-        let datosDB = JSON.parse(localStorage.getItem('gym-vue'));
+        let datosDB = JSON.parse(localStorage.getItem('crud-vue'));
 
         if(datosDB===null){
             this.tareas = [];
